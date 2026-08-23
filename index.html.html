@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Ricardo Beltramini de Melo — Psicólogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6E9E3;
+    --bg-alt:#FBF3EE;
+    --ink:#33473F;
+    --ink-soft:#5B6E64;
+    --line: rgba(51,71,63,0.16);
+    --serif:'Playfair Display', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* HERO */
+  header.hero{
+    padding: clamp(64px,10vw,120px) 0 clamp(48px,8vw,88px);
+    text-align:center;
+    position:relative;
+  }
+  .psi-mark{
+    font-family:var(--serif);
+    font-size:clamp(56px,9vw,84px);
+    line-height:1;
+    color:transparent;
+    -webkit-text-stroke:1.6px var(--ink);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  h1.name{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(2rem,5vw,3.1rem);
+    letter-spacing:-0.01em;
+    margin:14px 0 10px;
+  }
+  .role{
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .tagline{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.15rem,2.6vw,1.5rem);
+    color:var(--ink);
+    max-width:560px;
+    margin:0 auto 34px;
+  }
+  .cta-row{
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 26px;
+    border-radius:999px;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+    border:1.5px solid var(--ink);
+    transition:opacity .15s ease;
+  }
+  .btn:hover{opacity:0.78;}
+  .btn.primary{background:var(--ink); color:var(--bg);}
+  .btn.ghost{background:transparent; color:var(--ink);}
+
+  /* SECTIONS */
+  section{padding: clamp(48px,8vw,84px) 0;}
+  section.alt{background:var(--bg-alt);}
+  .section-head{margin-bottom:28px; max-width:640px;}
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(1.5rem,3.4vw,2.1rem);
+    margin-top:6px;
+  }
+  .prose{max-width:640px; color:var(--ink); font-size:1.02rem;}
+  .prose p + p{margin-top:14px;}
+
+  /* AREAS GRID */
+  .areas-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:14px;
+    margin-top:8px;
+  }
+  .area-card{
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 20px;
+    font-size:0.96rem;
+  }
+  .area-card .mark{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:0.85rem;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  /* COMO FUNCIONA */
+  .modo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-top:8px;
+  }
+  .modo-card{
+    padding:26px;
+    border-radius:16px;
+    background:var(--bg);
+    border:1px solid var(--line);
+  }
+  .modo-card h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.2rem;
+    margin-bottom:10px;
+  }
+  .modo-card p{color:var(--ink-soft); font-size:0.95rem;}
+
+  /* CONTATO — seção invertida */
+  section.contato{
+    background:var(--ink);
+    color:var(--bg);
+    text-align:center;
+  }
+  section.contato .eyebrow{color:rgba(246,233,227,0.65);}
+  section.contato h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(1.6rem,4vw,2.3rem);
+    margin:8px 0 18px;
+  }
+  section.contato .prose{margin:0 auto 30px; color:rgba(246,233,227,0.85);}
+  section.contato .btn.primary{background:var(--bg); color:var(--ink); border-color:var(--bg);}
+  section.contato .btn.ghost{color:var(--bg); border-color:rgba(246,233,227,0.5);}
+
+  footer{
+    padding:28px 0 40px;
+    text-align:center;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+  }
+  footer .crisis{
+    max-width:520px;
+    margin:0 auto 10px;
+    line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="psi-mark">Ψ</div>
+      <h1 class="name">José Ricardo Beltramini&nbsp;de&nbsp;Melo</h1>
+      <div class="role">Psicólogo · CRP 06/190953</div>
+      <p class="tagline">Atendimento psicológico presencial em Campinas/SP e online para todo o Brasil.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://wa.me/5519996678016" target="_blank" rel="noopener">Conversar no WhatsApp</a>
+        <a class="btn ghost" href="#contato">Ver formas de contato</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="alt" id="sobre">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Sobre</span>
+        <h2>Uma escuta construída com o tempo</h2>
+      </div>
+      <div class="prose">
+        <p>Sou psicólogo formado pela UNIP, com uma trajetória que passou antes pela educação e pelas ciências sociais até chegar à clínica. Hoje atuo em um serviço de proteção social de alta complexidade em Campinas, acompanhando pessoas em diferentes momentos de vida — muitas delas atravessando questões relacionadas ao uso de substâncias e a contextos de maior vulnerabilidade.</p>
+        <p>Essa vivência foi construindo minha forma de escutar: sem pressa, sem julgamento, e atenta ao que cada pessoa traz de mais particular na sua história.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="atuacao">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Áreas de atuação</span>
+        <h2>Quem eu atendo</h2>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card"><span class="mark">Ψ</span>Ansiedade e sobrecarga emocional</div>
+        <div class="area-card"><span class="mark">Ψ</span>Relacionamentos e vínculos</div>
+        <div class="area-card"><span class="mark">Ψ</span>Autoconhecimento e transições de vida</div>
+        <div class="area-card"><span class="mark">Ψ</span>Luto</div>
+        <div class="area-card"><span class="mark">Ψ</span>Uso de substâncias e dependência química</div>
+        <div class="area-card"><span class="mark">Ψ</span>Situações de vulnerabilidade social</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Presencial ou online</h2>
+      </div>
+      <div class="modo-grid">
+        <div class="modo-card">
+          <h3>Presencial</h3>
+          <p>Atendimentos em Campinas/SP, com horário combinado conforme sua disponibilidade.</p>
+        </div>
+        <div class="modo-card">
+          <h3>Online</h3>
+          <p>Sessões por videochamada para qualquer lugar do Brasil, com o mesmo sigilo profissional do atendimento presencial, seguindo as normas do Conselho Federal de Psicologia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <div class="wrap">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos conversar</h2>
+      <p class="prose">Me chama no WhatsApp ou por e-mail para saber mais sobre horários disponíveis.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://wa.me/5519996678016" target="_blank" rel="noopener">(19) 99667-8016</a>
+        <a class="btn ghost" href="mailto:jrbeltramini@hotmail.com">jrbeltramini@hotmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="crisis">Este site é informativo e não substitui atendimento de urgência. Em caso de risco à vida, ligue 188 (CVV) ou procure o pronto-socorro mais próximo.</p>
+      <p>José Ricardo Beltramini de Melo — Psicólogo CRP 06/190953</p>
+    </div>
+  </footer>
+
+</body>
+</html>
